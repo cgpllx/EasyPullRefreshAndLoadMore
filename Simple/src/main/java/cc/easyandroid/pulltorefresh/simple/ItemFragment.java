@@ -112,14 +112,12 @@ public class ItemFragment extends Fragment {
                 }, 30000);
             }
         });
-//        ptr.autoRefresh();
         ptr.postDelayed(new Runnable() {
             @Override
             public void run() {
                 ptr.autoRefresh();
             }
         }, 100);
-//        ptr.
     }
 
 
