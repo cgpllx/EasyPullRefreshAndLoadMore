@@ -9,10 +9,12 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
+import cc.easyandroid.pullrefresh.loadmore.ILoadMoreView;
+
 /**
  * Created by cgp
  */
-public abstract class BaseRecyclerAdapter<T> extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public abstract class BaseRecyclerAdapter<T> extends RecyclerView.Adapter<RecyclerView.ViewHolder>  {
 
     public static final int TYPE_NORMAL = 1;
     public static final int TYPE_HEADER = 1 << 24;//2 24 header item

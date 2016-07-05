@@ -14,7 +14,7 @@
     tools:context="cc.easyandroid.pulltorefresh.simple.ItemFragment"
     tools:listitem="@layout/fragment_item">
 
-    <cc.easyandroid.pulltorefresh.simple.PullRecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+    <cc.easyandroid.pullrefresh.PullRecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/list"
         android:name="cc.easyandroid.pulltorefresh.simple.ItemFragment"

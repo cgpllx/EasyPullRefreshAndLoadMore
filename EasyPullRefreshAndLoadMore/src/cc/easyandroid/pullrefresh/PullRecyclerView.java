@@ -1,4 +1,4 @@
-package cc.easyandroid.pulltorefresh.simple;
+package cc.easyandroid.pullrefresh;
 
 import android.content.Context;
 import android.support.v4.view.ViewCompat;
@@ -25,15 +25,15 @@ public class PullRecyclerView extends RecyclerView implements ILoadMoreView {
         super(context, attrs, defStyle);
     }
 
-    View footerView;
+    View mLoadMoreFooterView;
 
     @Override
     public void addFooterView(View view) {
-        footerView = view;
+        mLoadMoreFooterView = view;
         Adapter adapter = getAdapter();
-        if (adapter != null && adapter instanceof Easyadapter) {
-            Easyadapter myItemRecyclerViewAdapter = (Easyadapter) adapter;
-            myItemRecyclerViewAdapter.addFooterView(view);
+        if (adapter != null && adapter instanceof ILoadMoreView) {
+            ILoadMoreView loadMoreView = (ILoadMoreView) adapter;
+            loadMoreView.addFooterView(view);
         }
 
     }
@@ -41,9 +41,9 @@ public class PullRecyclerView extends RecyclerView implements ILoadMoreView {
     @Override
     public void setAdapter(Adapter adapter) {
         super.setAdapter(adapter);
-        if (adapter != null && adapter instanceof Easyadapter) {
-            Easyadapter myItemRecyclerViewAdapter = (Easyadapter) adapter;
-            myItemRecyclerViewAdapter.addFooterView(footerView);
+        if (adapter != null && adapter instanceof ILoadMoreView) {
+            ILoadMoreView loadMoreView = (ILoadMoreView) adapter;
+            loadMoreView.addFooterView(mLoadMoreFooterView);
         }
     }
 
